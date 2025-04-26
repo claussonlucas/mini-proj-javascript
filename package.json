@@ -1,0 +1,23 @@
+{
+  "name": "mini-proj-javascript",
+  "version": "1.0.0",
+  "description": "MiniProjeto JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "api" : "npx json-server api.json --watch --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claussonlucas/mini-proj-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claussonlucas/mini-proj-javascript/issues"
+  },
+  "homepage": "https://github.com/claussonlucas/mini-proj-javascript#readme",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

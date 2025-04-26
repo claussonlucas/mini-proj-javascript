@@ -20,6 +20,7 @@ body {
     /* não coloquei width pois header e main tem larguras diferentes */
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
 
 }
 
@@ -104,12 +105,87 @@ nav {
 }
 
 
-
+/* container principal */
 .container-princ {
     width: 80%;
-    height: 500px; /* retirar */
+    height: 600px; /* retirar */
     background-color: aquamarine; /* retirar */
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    
 }
+
+/* container lousa */
+#lousa {
+    width: 800px;
+    height: 500px;
+    background-color: bisque;
+    /*flex-grow: 3;  proporcao entre lousa e controles */
+    margin: 20px 0;
+
+    border: 10px solid brown;
+}
+
+/* div lembretes */
+#lembrete {
+    background-color: white;
+    width: 150px;
+    height: 120px;
+}
+
+#lembrete > h4 {
+    color: black;
+    padding: 10px 0 5px 10px;
+}
+
+#lembrete > p {
+    color: rgb(80, 78, 78);
+    padding: 5px 0 5px 10px;
+}
+
+/* container controles */
+#controles {
+    width: 200px;
+    height: 500px;
+    background-color: chocolate;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    /*flex-grow: 1;  proporcao entre lousa e controles */
+    margin: 20px 0;
+}
+
+/* botao criar */
+#criar {
+    background-color: rgb(139, 25, 25);
+    color: white;
+    font-weight: bold;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+#criar:hover {
+    background-color: darkred;
+     /* colocar pointer */
+}
+/* fim - botao criar */
+
+/* camada cinza */
+#layer-cinza {
+    width: 100%;
+    height: 100vh;
+    background-color: #00000090;
+    position: absolute; /* combina com z-index */
+    z-index: 1; /* combina com z-index - só em colocar position
+                    a camada já ficou sobre toda a página*/
+
+}
+
+
+/* fim - container principal */
 
 footer {
     width: 100%;
