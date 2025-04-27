@@ -20,10 +20,23 @@
     <!-- div container geral -->
     <div class="container-geral">
         <!-- camada cinza - tentar colocar em outro lugar -->
-        <div id="layer-cinza">
-            
+        <div id="layer-cinza" onclick="fecharForm()"></div>
 
+        <!-- formulario criar lembrete -->
+        <!-- se colocar onclick="novoLembrete()" no botao, o required nao funciona -->
+        <div id="criarLembrete">
+            <form action="" id="cont-form" onsubmit="novoLembrete()">
+                <div id="div-form">
+                    <h3>Criar Lembrete</h3>
+                    <label for="titulo-lemb">Título</label>
+                    <input required type="text" name="tituloLemb" id="tituloLemb">
+                    <label for="descricao">Descrição</label>
+                    <textarea required name="descricao" id="descricao"></textarea>
+                    <button type="submit">Criar</button>
+                </div>
+            </form>
         </div>
+        
 
         <header>
             <!-- div 1 - cabecalho -->
@@ -43,7 +56,6 @@
             <div id="div-pesquisa">
                 <div id="estilo-pesquisa">
                     <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquise tarefa">
-                    <button type="button" id="b-pesquisa">p</button>
                 </div>
             </div>
 
@@ -63,19 +75,23 @@
         <main class="container-princ">
             <!-- container lousa -->
             <section id="lousa">
-                <!-- div lembretes -->
-                <div id="lembrete">
-                    <h4>Título</h4>
-                    <p>
-                        Lembrete-0
-                    </p>
+                <!-- div lembretes  -->
+                <div id="tarefas">
+                    <ul id="lembrete">
+                        <!-- lembretes aparecem aqui automaticamente -->
+                    </ul>
                 </div>
+                <!--
+                <div id="lembrete">
+                    <h4 id="tit-lemb"></h4>
+                    <p id="des-lemb"></p>
+                </div> -->
             </section>
 
             <!-- container controles -->
             <aside id="controles">
                 <!-- botao criar lembrete -->
-                <button type="button" id="criar" >CRIAR</button>
+                <button type="button" id="criar" onclick="abrirForm()">CRIAR</button>
 
                 <h3>Edição mural</h3>
             </aside>
@@ -86,5 +102,7 @@
         </footer>
 
     </div><!-- FIM div container geral -->
+
+    <script src="index.js"></script>
 </body>
 </html>

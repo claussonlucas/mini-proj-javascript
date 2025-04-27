@@ -7,6 +7,9 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+
 }
 
 body {
@@ -66,7 +69,7 @@ nav {
 }
 
 #estilo-pesquisa {
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: center;
     background-color: bisque;
@@ -76,11 +79,7 @@ nav {
 }
 
 #pesquisa {
-    flex-grow: 3;
-}
-
-#b-pesquisa {
-    flex-grow: 1;
+    width: 400px;
 }
 
 #menus {
@@ -107,7 +106,7 @@ nav {
 
 /* container principal */
 .container-princ {
-    width: 80%;
+    width: 90%;
     height: 600px; /* retirar */
     background-color: aquamarine; /* retirar */
     display: flex;
@@ -118,7 +117,7 @@ nav {
 
 /* container lousa */
 #lousa {
-    width: 800px;
+    width: 1000px;
     height: 500px;
     background-color: bisque;
     /*flex-grow: 3;  proporcao entre lousa e controles */
@@ -127,21 +126,31 @@ nav {
     border: 10px solid brown;
 }
 
+
+#tarefas ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 30px ;
+}
+
+#tarefas ul li {
+    width: calc(25% - 12px);
+    background-color: white;
+    padding: 20px;
+
+}
 /* div lembretes */
 #lembrete {
-    background-color: white;
-    width: 150px;
-    height: 120px;
+
 }
 
-#lembrete > h4 {
+#lembrete > li > h4 {
     color: black;
-    padding: 10px 0 5px 10px;
 }
 
-#lembrete > p {
+#lembrete > li > p {
     color: rgb(80, 78, 78);
-    padding: 5px 0 5px 10px;
 }
 
 /* container controles */
@@ -178,10 +187,38 @@ nav {
     width: 100%;
     height: 100vh;
     background-color: #00000090;
-    position: absolute; /* combina com z-index */
+    position: fixed; /* combina com z-index */
     z-index: 1; /* combina com z-index - só em colocar position
                     a camada já ficou sobre toda a página*/
+    display: none;
+}
 
+/* precisei criar o container e a div formulario */
+/* container formulario */
+#cont-form {
+    position: fixed;
+    z-index: 2;
+    margin-top: 150px;
+    display: none;
+}
+
+/* div formulario */
+#div-form {
+    width: 350px;
+    height: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: bisque;
+
+    padding-top: 20px;
+        
+}
+
+
+#div-form > label, input, textarea {
+    width: 300px;
+    margin-top: 10px;
 }
 
 

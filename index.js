@@ -1,7 +1,100 @@
 /*
     parei em como mostrar e esconder a camada cinza
  */
-// criar camada cinza
-function layerGray() {
-    document.getElementById("layer-cinza").addEventListener
+// abre formulario e camada cinza
+function abrirForm() {
+    document.getElementById("layer-cinza").style.display = "block";
+    document.getElementById("cont-form").style.display = "block";
 }
+
+function fecharForm() {
+    document.getElementById("layer-cinza").style.display = "none";
+    document.getElementById("cont-form").style.display = "none";
+}
+
+// funcao que converter o endereço do servidor em json e chama outra função (inserir)
+function buscarLembretes() {
+    fetch("http://localhost:3000/lembretes")
+    .then(resposta => resposta.json())
+    .then(resposta => {
+        inserirLembretes(resposta);
+    });
+} buscarLembretes();
+
+// função que vai de fato inserir objeto no api.json
+function inserirLembretes(listaLembretes) {
+    // verifica se a array listaLembretes não está vazia
+    if (listaLembretes.length > 0) {
+        lembrete.innerHTML = "";
+        
+        listaLembretes.map(cadaLembrete => {
+            lembrete.innerHTML += `
+            <li>
+                <h4>${cadaLembrete.titulo}</h4>
+                <p>${cadaLembrete.descricao}</p>
+            </li>`
+        })
+    }
+}
+
+// cria uma nova tarefa
+function novoLembrete() {
+    event.preventDefault(); // nao deixa atualizar pagina
+    alert("Lembrete criado");
+    //document.getElementById("tit-lemb").innerHTML = tituloLemb.value;
+    //document.getElementById("des-lemb").innerHTML = descricao.value;
+
+    // cria objeto
+    let lembretes = {
+        titulo : tituloLemb.value,
+        descricao : descricao.value
+    };
+
+    // envia para servidor virtual
+    fetch("http://localhost:3000/lembretes", {
+        method : "POST",
+        headers : {
+            "Content-type" : "application/json"
+        },
+        body : JSON.stringify(lembretes)
+    })
+    .then(resposta => resposta.json())
+    .then(resposta => {
+        fecharForm();
+        buscarLembretes();
+        let form = document.querySelector("#criarLembrete form");
+        form.reset();
+    });
+    
+
+}
+
+/*
+// cria uma nova tarefa
+function novoLembrete() {
+    event.preventDefault(); // nao deixa atualizar pagina
+    alert("Lembrete criado");
+    //document.getElementById("tit-lemb").innerHTML = tituloLemb.value;
+    //document.getElementById("des-lemb").innerHTML = descricao.value;
+
+    // cria objeto
+    let lembretes = {
+        titulo : tituloLemb.value,
+        descricao : descricao.value
+    }
+
+    // envia para servidor virtual
+    fetch("http://localhost:3000/lembretes", {
+        method : "POST",
+        headers : {
+            "Content-type" : "application/json"
+        },
+        body : JSON.stringify(lembretes)
+    })
+    .then(resposta => resposta.json())
+    .then(resposta => {
+        console.log(resposta);
+        fecharForm();
+    });
+}
+*/
