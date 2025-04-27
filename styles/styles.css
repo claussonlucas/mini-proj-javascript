@@ -37,18 +37,18 @@ header {
 }
 
 #logo {
-    background-color: aquamarine;
     flex-grow: 1; /* combina com o flex-grow do #nome-app */
     display: flex; /* controla o que tem dentro da div */
     justify-content: center;
 }
 
 #nome-app {
-    background-color: bisque;
+    color: white;
     flex-grow: 3; /* combina com o flex-grow do #logo. 3 vezes maior */
     display: flex; /* controla o que tem dentro da div */
     flex-flow: column;
     align-items: center;
+    font-weight: bold;
 }
  /* barra de menu e pesquisa */
 nav {
@@ -70,16 +70,22 @@ nav {
 
 #estilo-pesquisa {
     width: 60%;
+    height: 100%;
+    background-color: white;
     display: flex;
     justify-content: center;
-    background-color: bisque;
-    border: 5px solid bisque;
+    align-items: center;
+    border: 5px solid white;
     border-radius: 5px;
     
 }
 
 #pesquisa {
     width: 400px;
+    height: 100%;
+    border: none;
+    padding: 0 10px;
+    margin: 0 5px;
 }
 
 #menus {
@@ -89,11 +95,15 @@ nav {
     flex-grow: 2;
 }
 
+#bot-link {
+    margin-right: 40px;
+}
+
 .b-menu {
     font-size: 18px;
     color: white;
     text-decoration: none;
-    padding: 5px;
+    padding: 15px;
 }
 
 .b-menu:visited {color: white;}
@@ -107,12 +117,9 @@ nav {
 /* container principal */
 .container-princ {
     width: 90%;
-    height: 600px; /* retirar */
-    background-color: aquamarine; /* retirar */
     display: flex;
     justify-content: center;
     flex-flow: row nowrap;
-    
 }
 
 /* container lousa */
@@ -126,7 +133,6 @@ nav {
     border: 10px solid brown;
 }
 
-
 #tarefas ul {
     display: flex;
     flex-wrap: wrap;
@@ -138,19 +144,26 @@ nav {
     width: calc(25% - 12px);
     background-color: white;
     padding: 20px;
-
+    display: initial;
 }
+
+#tarefas ul li.oculto {
+    display: none;
+}
+
 /* div lembretes */
-#lembrete {
-
-}
-
 #lembrete > li > h4 {
     color: black;
 }
 
 #lembrete > li > p {
     color: rgb(80, 78, 78);
+}
+
+#lembrete > li > img {
+    width: 15px;
+    fill: aqua;
+    color: blueviolet;
 }
 
 /* container controles */
@@ -168,16 +181,18 @@ nav {
 
 /* botao criar */
 #criar {
-    background-color: rgb(139, 25, 25);
+    background-color: rgb(141, 30, 30);
     color: white;
     font-weight: bold;
     padding: 15px 20px;
     margin: 20px 0;
+    border: none;
     border-radius: 5px;
 }
 
 #criar:hover {
     background-color: darkred;
+
      /* colocar pointer */
 }
 /* fim - botao criar */

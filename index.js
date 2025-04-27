@@ -32,6 +32,8 @@ function inserirLembretes(listaLembretes) {
             <li>
                 <h4>${cadaLembrete.titulo}</h4>
                 <p>${cadaLembrete.descricao}</p>
+                <img src="images/lixeira1.svg" alt="Lixeira"
+                onclick="apagaLembrete(${cadaLembrete.id})">
             </li>`
         })
     }
@@ -69,32 +71,34 @@ function novoLembrete() {
 
 }
 
-/*
-// cria uma nova tarefa
-function novoLembrete() {
-    event.preventDefault(); // nao deixa atualizar pagina
-    alert("Lembrete criado");
-    //document.getElementById("tit-lemb").innerHTML = tituloLemb.value;
-    //document.getElementById("des-lemb").innerHTML = descricao.value;
-
-    // cria objeto
-    let lembretes = {
-        titulo : tituloLemb.value,
-        descricao : descricao.value
-    }
-
-    // envia para servidor virtual
-    fetch("http://localhost:3000/lembretes", {
-        method : "POST",
-        headers : {
-            "Content-type" : "application/json"
-        },
-        body : JSON.stringify(lembretes)
-    })
+// deleta lembretes
+function apagaLembrete(id) {
+    fetch(`http://localhost:3000/lembretes/${id}`,
+        {
+            method : "DELETE"
+        }
+    )
     .then(resposta => resposta.json())
     .then(resposta => {
-        console.log(resposta);
-        fecharForm();
-    });
+        alert("Lembrete apagado!");
+        buscarLembretes();
+    })
 }
-*/
+
+function pesquisarLembrete() {
+    let lista = document.querySelectorAll("ul li");
+
+    if (pesquisa.value.length > 0) {
+        lista.forEach(li => {
+            if (!li.children[0].innerText.includes(pesquisa.value)) {
+                li.classList.add("oculto");
+            } else {
+                li.classList.remove("oculto");
+            }
+        });
+    } else {
+        lista.forEach(li => {
+            li.classList.remove("oculto");
+        });
+    }
+}
