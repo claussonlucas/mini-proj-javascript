@@ -9,6 +9,7 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
+    outline: none;
 
 }
 
@@ -133,21 +134,21 @@ nav {
     border: 10px solid brown;
 }
 
-#tarefas ul {
+#divLembretes ul {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     margin: 30px ;
 }
 
-#tarefas ul li {
+#divLembretes ul li {
     width: calc(25% - 12px);
     background-color: white;
     padding: 20px;
     display: initial;
 }
 
-#tarefas ul li.oculto {
+#divLembretes ul li.oculto {
     display: none;
 }
 
@@ -192,8 +193,7 @@ nav {
 
 #criar:hover {
     background-color: darkred;
-
-     /* colocar pointer */
+    cursor: pointer;
 }
 /* fim - botao criar */
 
@@ -209,6 +209,12 @@ nav {
 }
 
 /* precisei criar o container e a div formulario */
+#criarLembrete {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+
 /* container formulario */
 #cont-form {
     position: fixed;
@@ -224,23 +230,68 @@ nav {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    background-color: bisque;
-
-    padding-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 25px;
         
 }
 
+#div-form > h3 {
+    margin-bottom: 10px;
+}
 
 #div-form > label, input, textarea {
     width: 300px;
     margin-top: 10px;
+    border-radius: 5px;
 }
 
+#div-form > input, textarea {
+    border: 2px solid rgb(122, 97, 97);
+}
+
+#div-form > input:hover, textarea:hover {
+    border: 2px solid darkred;
+}
+
+#div-form > input:focus,textarea:focus {
+    border-color: darkred;
+}
+
+#div-form > input {
+    height: 30px;
+}
+
+#div-form > textarea {
+    height: 70px;
+
+}
+
+#btForm {
+    width: 300px;
+    height: 30px;
+    background-color: rgb(141, 30, 30);
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+#btForm:hover {
+    background-color: darkred;
+    cursor: pointer;
+}
 
 /* fim - container principal */
 
 footer {
     width: 100%;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(146, 36, 36);
+    color: white;
+    font-weight: bold;
 }
