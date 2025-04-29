@@ -2,7 +2,7 @@
 <!--
     Mini Projeto JavaScript - Módulo JavaScript
     Autor: Clausson Lucas
-    Data: 24/04/2025
+    Data: 29/04/2025
 -->
 <html lang="pt-BR">
 <head>
@@ -41,7 +41,7 @@
             <!-- div 1 - cabecalho -->
             <div id="logo">
                 <!-- colocar imagem -->
-                <p>Logo</p>
+                <img src="images/logo-lemb-app1.png" alt="Logo LembretesApp" style="width: 60px; height: 64px;">
             </div>
             <!-- div 1 - cabecalho -->
             <div id="nome-app">
@@ -79,11 +79,6 @@
                         <!-- lembretes aparecem aqui automaticamente -->
                     </ul>
                 </div>
-                <!--
-                <div id="lembrete">
-                    <h4 id="tit-lemb"></h4>
-                    <p id="des-lemb"></p>
-                </div> -->
             </section>
 
             <!-- container controles -->
@@ -92,6 +87,26 @@
                 <button type="button" id="criar" onclick="abrirForm()">CRIAR</button>
 
                 <h3>Edição mural</h3>
+                <!-- container botões -->
+                <div id="botoes">
+                    <div class="cir-botao">
+                    <div id="cir-marrom" class="circulos-cor" ></div>
+                    <Button type="button" onclick="marrom()">Marrom</button>
+                    </div>
+                
+                    <div class="cir-botao">
+                    <div id="cir-branca"></div>
+                    <Button type="button" onclick="branca()">Branca</button>
+                    </div>
+                
+                    <div class="cir-botao">
+                    <div id="cir-verde"></div>
+                    <Button type="button" onclick="verde()">Verde</button>
+                    </div>
+                </div>
+                <!-- Fim container botões -->
+                
+
             </aside>
         </main>
 

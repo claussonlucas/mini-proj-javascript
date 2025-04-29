@@ -1,6 +1,6 @@
-/*
-    parei em como mostrar e esconder a camada cinza
- */
+
+
+
 // abre formulario e camada cinza
 function abrirForm() {
     document.getElementById("layer-cinza").style.display = "block";
@@ -104,3 +104,21 @@ function pesquisarLembrete() {
 }
 
 
+
+// muda cor da lousa para marrom
+function marrom() {
+    document.getElementById("lousa").style.backgroundColor = "bisque";
+    document.getElementById("lousa").style.borderColor = "brown";
+}
+
+// muda cor da lousa para branca
+function branca() {
+    document.getElementById("lousa").style.backgroundColor = "lightgray";
+    document.getElementById("lousa").style.borderColor = "gray";
+}
+
+// muda cor da lousa para verde
+function verde() {
+    document.getElementById("lousa").style.backgroundColor ="rgb(56, 95, 56)";
+    document.getElementById("lousa").style.borderColor ="rgb(68, 67, 67)";
+}
